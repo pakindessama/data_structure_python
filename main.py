@@ -16,9 +16,9 @@ if __name__ == '__main__':
     # print(binarySearch(data, 1000000, 0, len(data)-1))
     # print(checkAnagram2("publics relation", "crap built on lies"))
     # print(checkAnagram2("d o g", "God"))
-    # data = [1, 2, 3, 4, 5]
-    # counter = pair_sum(data, 5)
-    # print(counter)
+    data = [1, 2, 3, 4, 5]
+    counter = pair_sum(data, 5)
+    print(counter)
     # data = [1, 2, 3, 4, 5, 5, 1]
     # data2 = [1, 2, 3, 4, 5, 5]
     # print(find_missing_value(data, data2))
@@ -41,4 +41,4 @@ if __name__ == '__main__':
     # print(q.dequeue())
     # q.dequeue()
     # print(q.size())
-    print(balanced("}{({})"))
+    # print(balanced("}{({})"))

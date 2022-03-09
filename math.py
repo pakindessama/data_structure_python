@@ -1,3 +1,6 @@
+import collections
+
+
 def factorial(n):
     result = 1
     while n > 1:
@@ -29,7 +32,7 @@ def gpaCalculator():
     numberOfCourses = 0
     totalPoints = 0
     while not end:
-        grade = input();
+        grade = input()
         if grade == "":
             end = True
         elif grade not in points:
@@ -61,21 +64,36 @@ def binarySearch(data, target, low, high):
             return binarySearch(data, target, mid + 1, high)
 
 
-# To be optimized
-def pair_sum(data, target):
-    counter = 0
-    if len(data):
+# O(n*n) complexity
+# def pair_sum(arr, target):
+#     counter = 0
+#     if len(arr) < 2:
+#         return
+#     for i in range(0, len(arr)):
+#         for j in range(i + 1, len(arr)):
+#             if arr[i] + arr[j] == target:
+#                 counter += 1
+#                 print(f"({arr[i]}, {arr[j]})")
+#     return counter
+
+
+# O(n) complexity
+def pair_sum(arr, target):
+    if len(arr) < 2:
         return
-    for i in range(0, len(data)):
-        for j in range(i + 1, len(data)):
-            if data[i] + data[j] == target:
-                counter += 1
-                print(f"({data[i]}, {data[j]})")
-    return counter
+    result = set()
+    seen = set()
+    for value in arr:
+        k = target - value
+        if k not in seen:
+            seen.add(value)
+        else:
+            result.add((min(value, target), max(value, target)))
+    return result
+
 
 
 # To be optimized
-import collections
 
 
 def find_missing_value(arr1, arr2):
